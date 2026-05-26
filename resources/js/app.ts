@@ -4,9 +4,10 @@ import AppLayout from '@/layouts/AppLayout.vue';
 import AuthLayout from '@/layouts/AuthLayout.vue';
 import SettingsLayout from '@/layouts/settings/Layout.vue';
 import { initializeFlashToast } from '@/lib/flashToast';
-import { withInertiaModal } from '@inertiaui/modal-vue'
-
+import { Modal, ModalLink, renderApp } from '@inertiaui/modal-vue'
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+import { putConfig } from '@inertiaui/modal-vue'
+import { withInertiaModal } from '@inertiaui/modal-vue'
 
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
@@ -23,13 +24,25 @@ createInertiaApp({
                 return AppLayout;
         }
     },
-    withApp(app) { 
-        withInertiaModal(app) 
-    }, 
+    withApp(app) {
+        withInertiaModal(app)
+        app.component('Modal', Modal)
+        app.component('ModalLink', ModalLink)
+    },
     progress: {
         color: '#4B5563',
     },
+
 });
+putConfig({
+   modal: {
+
+        closeExplicitly: true,
+    },
+    slideover: {
+        closeExplicitly: true,
+    },
+})
 
 // This will set light / dark mode on page load...
 initializeTheme();

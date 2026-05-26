@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Heading from '@/components/Heading.vue';
 import AppLayout from '@/Layouts/AppLayout.vue'
 import { Link, router } from '@inertiajs/vue3'
 import { Car, ChevronLeft, ChevronRight, Filter, Plus, Search, Wrench } from 'lucide-vue-next'
@@ -42,9 +43,12 @@ const fuelIcon: Record<string, string> = { gasoline: '⛽', diesel: '🛢️', e
 
 <template>
   <AppLayout>
-    <template #header>
-      <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Fleet Management</h1>
-    </template>
+   <Heading
+      variant="small"
+      title="Vehicles"
+      description=" Manage your vehicles"
+    />
+
 
     <div class="p-4 lg:p-6 space-y-5">
       <!-- Toolbar -->

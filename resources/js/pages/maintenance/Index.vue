@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // import AppLayout from '@/Layouts/AppLayout.vue'
+import Heading from '@/components/Heading.vue';
 import { useForm, router } from '@inertiajs/vue3'
-import { ChevronLeft, ChevronRight, Plus, Wrench } from 'lucide-vue-next'
+import { ChevronLeft, ChevronRight, Ham, Plus, Wrench } from 'lucide-vue-next'
 import { ref } from 'vue'
 
 const props = defineProps<{
@@ -52,9 +53,11 @@ const typeLabels: Record<string, string> = {
 
 <template>
   <!-- <AppLayout> -->
-    <template #header>
-      <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Maintenance</h1>
-    </template>
+     <Heading
+      variant="small"
+      title="Maintenance"
+      description="View and schedule maintenance for your vehicles"
+    />
 
     <div class="p-4 lg:p-6 space-y-5">
       <div class="flex justify-end">

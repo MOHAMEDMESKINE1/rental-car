@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // import AppLayout from '@/Layouts/AppLayout.vue'
+import Heading from '@/components/Heading.vue';
 import { useForm } from '@inertiajs/vue3'
 import { Car, Pencil, Plus, Trash2, X } from 'lucide-vue-next'
 import { ref } from 'vue'
@@ -53,9 +54,11 @@ const destroy = (id: string) => {
 
 <template>
   <!-- <AppLayout> -->
-    <template #header>
-      <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Vehicle Categories</h1>
-    </template>
+     <Heading
+      variant="small"
+      title="Vehicle Categories"
+      description=" Manage your vehicle categories"
+    />
 
     <div class="p-4 lg:p-6 space-y-5">
       <div class="flex justify-end">

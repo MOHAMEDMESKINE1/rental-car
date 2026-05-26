@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // import AppLayout from '@/Layouts/AppLayout.vue'
+import Heading from '@/components/Heading.vue';
 import { Link, router } from '@inertiajs/vue3'
 import { AlertTriangle, ChevronLeft, ChevronRight, Plus, Search } from 'lucide-vue-next'
 import { ref, watch } from 'vue'
@@ -34,9 +35,12 @@ const formatAmount = (val: number) => `${Number(val).toLocaleString()} MAD`
 
 <template>
   <!-- <AppLayout> -->
-    <template #header>
-      <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Rentals</h1>
-    </template>
+     <Heading
+      variant="small"
+      title=" Rental"
+      description=" View and schedule rental for your vehicles"
+    />
+
 
     <div class="p-4 lg:p-6 space-y-5">
       <!-- Summary cards -->

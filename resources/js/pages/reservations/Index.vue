@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // import AppLayout from '@/Layouts/AppLayout.vue'
+import Heading from '@/components/Heading.vue';
 import { Link, router } from '@inertiajs/vue3'
 import { ChevronLeft, ChevronRight, Plus } from 'lucide-vue-next'
 import { ref, watch } from 'vue'
@@ -29,9 +30,11 @@ const formatDate = (d: string) =>
 
 <template>
   <!-- <AppLayout> -->
-    <template #header>
-      <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Reservations</h1>
-    </template>
+      <Heading
+      variant="small"
+      title="Reservations"
+      description=" Manage your reservations"
+    />
 
     <div class="p-4 lg:p-6 space-y-5">
       <div class="flex flex-wrap items-center gap-3">

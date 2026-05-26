@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // import AppLayout from '@/Layouts/AppLayout.vue'
+import Heading from '@/components/Heading.vue';
 import { Link, useForm, router } from '@inertiajs/vue3'
 import { ArrowLeft, Calculator, Car, Check, ChevronDown, Search } from 'lucide-vue-next'
 import { computed, ref, watch } from 'vue'
@@ -87,14 +88,20 @@ const fmt = (v: number) => `${Number(v).toLocaleString()} MAD`
 
 <template>
   <!-- <AppLayout> -->
-    <template #header>
+    <!-- <template #header>
       <div class="flex items-center gap-3">
         <Link href="/reservations" class="p-1.5 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800">
           <ArrowLeft class="h-4 w-4" />
         </Link>
         <h1 class="text-lg font-semibold text-gray-900 dark:text-white">New Reservation</h1>
       </div>
-    </template>
+    </template> -->
+     <Heading
+      variant="small"
+      title="Maintenance"
+      description="View and schedule maintenance for your vehicles"
+    />
+
 
     <div class="p-4 lg:p-6">
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">

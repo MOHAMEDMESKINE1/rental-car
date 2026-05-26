@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3';
-import { BookOpen, FolderGit2, LayoutGrid } from 'lucide-vue-next';
+import { BookOpen, FolderGit2, LayoutGrid ,CircleUserRound} from 'lucide-vue-next';
 import { computed } from 'vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
@@ -18,6 +18,8 @@ import {
 } from '@/components/ui/sidebar';
 import type { NavItem } from '@/types';
 import { dashboard } from '@/routes/admin';
+import {index as customers} from '@/routes/admin/customers';
+
 const page = usePage();
 
 const dashboardUrl = computed(() =>
@@ -27,9 +29,15 @@ const dashboardUrl = computed(() =>
 const mainNavItems = computed<NavItem[]>(() => [
     {
         title: 'Dashboard',
-        href: dashboardUrl.value,
+        href:  dashboard().url,
         icon: LayoutGrid,
     },
+    // customers
+    {
+        title: 'Customers',
+        href:  customers().url,
+        icon: CircleUserRound ,
+    }
 ]);
 
 const footerNavItems: NavItem[] = [

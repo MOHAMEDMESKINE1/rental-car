@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // import AppLayout from '@/Layouts/AppLayout.vue'
+import Heading from '@/components/Heading.vue';
 import { BarChart3, Car, TrendingUp, Users } from 'lucide-vue-next'
 import { computed } from 'vue'
 import VueApexCharts from 'vue3-apexcharts'
@@ -48,9 +49,12 @@ const categorySeries = computed(() => props.revenueByCategory.map((c) => Number(
 
 <template>
   <!-- <AppLayout> -->
-    <template #header>
-      <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Reports & Analytics</h1>
-    </template>
+      <Heading
+      variant="small"
+      title="Reports"
+      description="View and analyze your vehicle rental data"
+    />
+
 
     <div class="p-4 lg:p-6 space-y-6">
       <!-- KPI Row -->
